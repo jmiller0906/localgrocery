@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  h1 #{department.name}
+  
+  if department_products.length
+  
+    p #[strong Delete the following products before attempting to delete this department.]
+  
+    div(style='margin-left:20px;margin-top:20px')
+
+      h4 Products
+    
+      dl
+      each product in department_products
+        dt 
+          a(href=product.url) #{product.name}
+        dd #{product.quantity}
+
+  else
+    p Do you really want to delete this Department?
+    
+    form(method='POST' action='')
+      div.form-group
+        input#departmentid.form-control(type='hidden',name='departmentid', required='true', value=department._id )
+
+      button.btn.btn-primary(type='submit') Delete

@@ -1,0 +1,23 @@
+extends layout
+
+block content
+
+  h1 Department: #{department.name}
+  
+  div(style='margin-left:20px;margin-top:20px')
+
+    h4 Products
+    
+    dl
+    each product in department_products
+      dt 
+        a(href=product.url) #{product.name}
+      dd #{product.quantity}
+
+    else
+      p This department has no products	  
+    hr
+    p
+     a(href=department.url+'/delete') Delete department
+    p
+     a(href=department.url+'/update') Update department

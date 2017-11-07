@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1= title
+  p Miller's Grocery is a family-owned store located just outside of Appleton, WI. Miller's was founded in 2017 by Chad and Julia Miller. Julia, the daughter of a farmer, believes in providing food grown locally at low prices. Shop local, support small businesses!
+
+  h1 Dynamic content
+
+  if error
+    p Error getting dynamic content.
+  else
+    p The grocery store has the following record counts:
+
+    ul
+      li #[strong Products:] !{data.product_count}
+      li #[strong Departments:] !{data.department_count}

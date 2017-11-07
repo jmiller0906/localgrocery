@@ -1,0 +1,13 @@
+extends layout
+
+block content
+
+  h1 Product: #{product.name}
+  
+  p #[strong SKU:] #{product.sku}
+  p #[strong Quantity:] #{product.quantity}
+  hr
+  p
+   a(href=product.url+'/delete') Delete product
+  p
+   a(href=product.url+'/update') Update product
